@@ -9,29 +9,34 @@ class Bank
     float balance;
 
 public:
-       stud()
-       { 
-             accNo=10;
-    void inp1()
+    void input()
     {
-        cout << "Enter value ";
-        cin >> accNo>>name>>balance;
-        }
-        void inp2()
-        {
-             accNo= 10;
-             name= 'sans';
-             balance = 100.6;
-             }
+        cout << "Enter Account No: ";
+        cin >> accNo;
 
-    
+        cout << "Enter Name: ";
+        cin >> name;
 
-    void disp()
-    {
-       cout<<"info";
-       cout<<accNo<<name<<balance;
+        cout << "Enter Balance: ";
+        cin >> balance;
     }
 
+    void deposit()
+    {
+        float amt;
+        cout << "Enter Deposit: ";
+        cin >> amt;
+
+        balance = balance + amt;
+    }
+
+    void display()
+    {
+        cout << "\nAccount No: " << accNo;
+        cout << "\nName: " << name;
+        cout << "\nBalance: " << balance << endl;
+    }
+};
 
 int main()
 {
@@ -45,10 +50,10 @@ int main()
     b.input();
     b.deposit();
 
-    cout << " Account 1 ";
+    cout << "\n--- Account 1 ---";
     a.display();
 
-    cout << "\n Account 2 ";
+    cout << "\n--- Account 2 ---";
     b.display();
 
     return 0;
